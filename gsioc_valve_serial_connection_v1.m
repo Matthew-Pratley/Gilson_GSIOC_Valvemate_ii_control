@@ -1,11 +1,10 @@
-function [s_connect, message] = gsiocserialconnection_v1(port);
+function [s_connect, message] = gsioc_valve_serial_connection_v1(port);
 % function for connecting to a Gilson pump or actuator depending on the device connected to the computer using a GSIOC cable
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Input:
 % ports - this is the comport you want to make a disconnection or connection to 
-% baud - baudrate for the device for: 
-% valve seclectors  - 19200
+% baud - baudrate for the device for: valve selectors  - 19200
 %
 % Output:
 % s_connect - the connection or disconnection of the serial port
@@ -27,7 +26,7 @@ configureCallback(s_connect, 'off');
 fopen(s_connect)
 
 % reads data from valve 
-% valveinfo =gsiocserialinput_v1(s_connect, 'I', 'P');
+%valveinfo =gsiocserialinput_v1(s_connect, 'I', 'P');
 
 % writes message 
 message = append('Connected to: ', port, ' at ', datestr(now));

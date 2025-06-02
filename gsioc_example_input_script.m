@@ -35,10 +35,10 @@ gsioc_valve_error_clear_v1(valve, 34);
 %% set and read the valve position with a valve ID of 34
 
 % reads valve position
-gsioc_valve_position_v1(s_connect, 34, 'read');
+gsioc_valve_position_v1(valve, 34, 'read');
 
 % sets a new valve position
-gsioc_valve_position_v1(s_connect, 34, 5);
+gsioc_valve_position_v1(valve, 34, 5);
 
 
 

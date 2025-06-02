@@ -14,7 +14,7 @@ function [message] = gsioc_valve_reset_v1(s_connect, ID);
 gsiocserialinput_v1(s_connect, ID, 'I', '$');
 
 % writes message to confirm action
-message = append('Valve : ', num2str(ID), 'reset');
+message = append('Valve : ', num2str(ID), ' ', 'reset');
 disp(message);
 
 end

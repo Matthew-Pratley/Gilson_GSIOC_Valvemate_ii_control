@@ -20,10 +20,10 @@ for i = 1:6;
     pause (1)
 
     % middle
-    if i <= 2;
-        gsiocserialinput_v1(s_connect, 36, 'B', pos);
-    end
-    pause (1)
+    %if i <= 2;
+    %    gsiocserialinput_v1(s_connect, 36, 'B', pos);
+    %end
+    %pause (1)
 
 
 end
