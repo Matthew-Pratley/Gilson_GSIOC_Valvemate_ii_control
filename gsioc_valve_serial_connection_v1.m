@@ -1,4 +1,4 @@
-function [s_connect] = gsiocserialconnection_v1(port);
+function [s_connect, message] = gsiocserialconnection_v1(port);
 % function for connecting to a Gilson pump or actuator depending on the device connected to the computer using a GSIOC cable
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -29,8 +29,9 @@ fopen(s_connect)
 % reads data from valve 
 valveinfo =gsiocserialinput_v1(s_connect, 'I', 'P');
 
-%
+% writes message 
+message = append('Connected to: ', port, ' at ', datestr(now));
+disp(message);
 
-disp(append('Connected to: ', port, ' at ', datestr(now)));
 
 end

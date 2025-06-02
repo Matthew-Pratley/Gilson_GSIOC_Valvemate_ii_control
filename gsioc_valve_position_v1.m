@@ -1,4 +1,4 @@
-function [outcome] = gsioc_valve_position_v1(s_connect, ID, value);
+function [message] = gsioc_valve_position_v1(s_connect, ID, value);
 %% sets a gilson valvemate ii to a specific position 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Input:
@@ -21,7 +21,8 @@ if text_test == 1;
     disp(append('Valve: ', num2str(ID), ' is in position ', valveinfo));
 
     else
-        disp('Invalid input please make sure the input value is either "read", or a valid number');
+        message = 'Invalid input please make sure the input value is either "read", or a valid number';
+        disp(message);
     end
 
 elseif text_test == 0;
@@ -38,11 +39,13 @@ elseif text_test == 0;
 
 
     % catches if the position number input is too high for the valve
-    if value > portnum || value > posnum ; 
-        disp('Error position value invalid');
+    if value > portnum || value > posnum ;
+        message = 'Error position value invalid';
+        disp(message);
     else 
         gsiocserialinput_v1(s_connect, ID, 'B', pos);
-        disp(append('Valve:', num2str(ID), ' set to position: ', num2str(value)));
+        message = append('Valve:', num2str(ID), ' set to position: ', num2str(value));
+        disp(message);
     end
 
 end

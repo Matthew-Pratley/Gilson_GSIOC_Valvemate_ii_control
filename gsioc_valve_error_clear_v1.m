@@ -1,4 +1,4 @@
-function [outcome] = gsioc_valve_error_clear_v1(s_connect, ID);
+function [message] = gsioc_valve_error_clear_v1(s_connect, ID);
 %% Clears an error from the gilson Valvemate ii
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Input:
@@ -20,11 +20,13 @@ errorcodes = ["Unknown command, please check input values", "Invalid NV-RAM addr
 
 %%
 if valveerrorinfo == 0;
-    disp('No error Detected');
+    message = ('No error Detected')
+    disp(message);
 else 
     gsiocserialinput_v1(s_connect, ID, 'B', 'e');
     disp(append('Error Code: ', num2str(valveerrorinfo), ' : ',  errorcodes(:, valveerrorinfo)));
-    disp(append('Error Code: ', num2str(valveerrorinfo), ' cleared'));
+    message = append('Error Code: ', num2str(valveerrorinfo), ' cleared');
+    disp(message);
 end 
 end
 
