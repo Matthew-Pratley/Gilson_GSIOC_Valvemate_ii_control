@@ -27,7 +27,7 @@ configureCallback(s_connect, 'off');
 fopen(s_connect)
 
 % reads data from valve 
-valveinfo =gsiocserialinput_v1(s_connect, 'I', 'P');
+% valveinfo =gsiocserialinput_v1(s_connect, 'I', 'P');
 
 % writes message 
 message = append('Connected to: ', port, ' at ', datestr(now));
