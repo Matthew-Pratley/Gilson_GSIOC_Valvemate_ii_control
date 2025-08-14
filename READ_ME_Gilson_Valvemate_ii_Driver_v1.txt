@@ -88,35 +88,3 @@ gsioc_valve_position_v1(s_connect, 34, 'read');
 To set a connected valve with an ID of 34 to position 5.
 gsioc_valve_position_v1(s_connect, 34, 5);
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-2025-06-03_1129 Simulation mode, no connection to hardware attempted
-2025-06-03_1443 Injection pump COMport is: COM6
-2025-06-03_1443 Expulsion pump COMport is: COM10
-2025-06-03_1443 GSIOC valve COMport is: COM3
-2025-06-03_1443 Connected to pump at COM6 address: 00
-2025-06-03_1443 Connected to pump at COM10 address: 00
-2025-06-03_1443 Connected to: COM3 at 03-Jun-2025 14:43:26
-2025-06-03_1443 All connections complete
-2025-06-05_0944 Injection pump COM port is: COM6
-2025-06-05_0944 Expulsion pump COM port is: COM10
-2025-06-05_0944 GSIOC valve COM port is: COM3
-2025-06-05_0944 Injection pump COM port is: COM6
-2025-06-05_0944 Expulsion pump COM port is: COM10
-2025-06-05_0944 GSIOC valve COM port is: COM3
